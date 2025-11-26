@@ -6,7 +6,7 @@ function MainAppPageLayout({ children }) {
       <div className="flex flex-col md:flex-row items-center gap-8">
 
         {/* LEFT IMAGE BOX */}
-        <div className="w-[580px] h-[722px] rounded-2xl overflow-hidden">
+        <div className="w-[480px] h-[580px] rounded-2xl overflow-hidden">
           <img
             src={landingImg}
             alt="Main Visual"
@@ -15,7 +15,7 @@ function MainAppPageLayout({ children }) {
         </div>
 
         {/* RIGHT CARD BOX */}
-        <div className="w-[580px] h-[722px] bg-[#FFF9F9] rounded-2xl shadow-lg p-10 overflow-y-auto">
+        <div className="w-[480px] h-[580px] bg-[#FFF9F9] rounded-2xl shadow-lg p-10 overflow-y-auto">
           {children}
         </div>
 

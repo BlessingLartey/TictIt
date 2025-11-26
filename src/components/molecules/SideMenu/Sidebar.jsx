@@ -1,12 +1,12 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
-import { Menu, Search, Calendar, ListTodo, StickyNote, Home } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Menu, Search, Calendar, ListTodo, StickyNote, Home, LogOut } from "lucide-react";
 import Title from "../../atoms/Title/title";
 
 // Sidebar Component
 export default function Sidebar() {
   return (
-    <aside className="w-[346px] h-[100%] bg-[#F4F4F4] p-5 flex flex-col border-r border-gray-300 m-5">
+    <aside className="w-[346px] max-h-screen bg-[#F4F4F4] p-5 flex flex-col border border-gray-300 rounded-lg m-5">
       {/* Top Row */}
       <div className="flex justify-between items-center mb-5">
         <Title>Menu</Title>
@@ -26,6 +26,7 @@ export default function Sidebar() {
       </div>
 
       {/* Task Title */}
+      <div className="flex-grow overflow-y-auto pr-2">
       <h3 className="uppercase text-xs text-gray-500 font-semibold mb-2">Tasks</h3>
       <nav className="flex flex-col gap-2 mb-6">
         <Link className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-200" to="/home">
@@ -63,6 +64,14 @@ export default function Sidebar() {
         <button className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-200 text-gray-700 text-left">
           + Add New List
         </button>
+        <Link
+          to="/"
+          className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-200 text-gray-700 w-full"
+        >
+          <LogOut className="w-5 h-5 text-gray-600" />
+          Sign Out
+        </Link>
+      </div>
       </div>
     </aside>
   );

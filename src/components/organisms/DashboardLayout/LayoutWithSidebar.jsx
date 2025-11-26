@@ -3,13 +3,12 @@ import Sidebar from "../../molecules/SideMenu/Sidebar";
 
 export default function LayoutWithSidebar() {
   return (
-    <div className="flex h-[100%] w-screen bg-white gap-5"
+    <div className="flex h-screen w-screen bg-white overflow-hidden gap-5 justify-center px-5 m-auto"
 >
       <Sidebar />
 
       {/* Where routed pages will appear */}
-      <main className="flex-1 h-[100%] w-[838px] overflow-auto p-8 content-center"
->
+      <main className=" w-[838px] max-h-screen overflow-hidden p-8">
         <Outlet />
       </main>
     </div>
