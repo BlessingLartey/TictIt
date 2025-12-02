@@ -4,13 +4,17 @@ import { Menu, Search, Calendar, ListTodo, StickyNote, Home, LogOut } from "luci
 import Title from "../../atoms/Title/title";
 
 // Sidebar Component
-export default function Sidebar() {
+export default function Sidebar( {cancelSidebar}) {
   return (
-    <aside className="w-[346px] max-h-screen bg-[#F4F4F4] p-5 flex flex-col border border-gray-300 rounded-lg m-5">
+    <aside className=" bg-[#F4F4F4] 
+        p-5 flex flex-col border border-gray-300 rounded-lg
+        h-full 
+        w-full md:w-[346px] 
+        md:m-5
+        overflow-y-auto">
       {/* Top Row */}
       <div className="flex justify-between items-center mb-5">
         <Title>Menu</Title>
-        <Menu className="w-6 h-6 text-gray-700" />
       </div>
 
       {/* Search Bar */}
@@ -29,19 +33,19 @@ export default function Sidebar() {
       <div className="flex-grow overflow-y-auto pr-2">
       <h3 className="uppercase text-xs text-gray-500 font-semibold mb-2">Tasks</h3>
       <nav className="flex flex-col gap-2 mb-6">
-        <Link className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-200" to="/home">
+        <Link className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-200" to="/home" onClick={cancelSidebar}>
           <Home className="w-5 h-5 text-blue-600" /> Home
         </Link>
-        <Link className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-200" to="/upcoming">
+        <Link className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-200" to="/upcoming" onClick={cancelSidebar}>
           <ListTodo className="w-5 h-5 text-green-600" /> Upcoming
         </Link>
-        <Link className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-200" to="/today">
+        <Link className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-200" to="/today" onClick={cancelSidebar}>
           <ListTodo className="w-5 h-5 text-yellow-600" /> Today
         </Link>
-        <Link className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-200" to="/calendar">
+        <Link className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-200" to="/calendar" onClick={cancelSidebar}>
           <Calendar className="w-5 h-5 text-purple-600" /> Calendar
         </Link>
-        <Link className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-200" to="/sticky">
+        <Link className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-200" to="/sticky" onClick={cancelSidebar}>
           <StickyNote className="w-5 h-5 text-red-600" /> Sticky Wall
         </Link>
       </nav>

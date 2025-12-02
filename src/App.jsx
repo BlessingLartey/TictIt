@@ -13,6 +13,7 @@ import StickyWallPage from "./components/pages/StickyWallPage.jsx";
 
 export default function App() {
   return (
+    
     <Routes>
 
       {/* Public pages */}
